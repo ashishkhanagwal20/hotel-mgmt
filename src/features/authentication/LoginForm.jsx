@@ -1,14 +1,14 @@
-import { useState } from "react";
-import Button from "../../ui/Button";
-import Form from "../../ui/Form";
-import Input from "../../ui/Input";
-import FormRow from "../../ui/FormRow";
-import SpinnerMini from "../../ui/SpinnerMini";
-import { useLogin } from "./useLogin";
+import { useState } from 'react';
+import Button from '../../ui/Button';
+import Form from '../../ui/Form';
+import Input from '../../ui/Input';
+import FormRow from '../../ui/FormRow';
+import SpinnerMini from '../../ui/SpinnerMini';
+import { useLogin } from './useLogin';
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('ashish@demo.com');
+  const [password, setPassword] = useState('password');
   const { login, isLoading } = useLogin();
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,8 +19,8 @@ function LoginForm() {
       { email, password },
       {
         onSettled: () => {
-          setEmail("");
-          setPassword("");
+          setEmail('');
+          setPassword('');
         },
       }
     );
@@ -51,7 +51,7 @@ function LoginForm() {
       </FormRow>
       <FormRow>
         <Button size="large" disabled={isLoading}>
-          {!isLoading ? "Log in" : <SpinnerMini />}
+          {!isLoading ? 'Log in' : <SpinnerMini />}
         </Button>
       </FormRow>
     </Form>
